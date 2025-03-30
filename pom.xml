@@ -3,21 +3,36 @@
   <groupId>MyFirstJavaProject</groupId>
   <artifactId>MyFirstJavaProject</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+
   <build>
     <sourceDirectory>src</sourceDirectory>
     <plugins>
       <plugin>
-   		<groupId>org.apache.maven.plugins</groupId>
-    	<artifactId>maven-jar-plugin</artifactId>
-     	<version>3.1.0</version>             
-      	<configuration>
-        	<archive>
-             	<manifest>
-              		<mainClass>com.app.App</mainClass>
-              	</manifest>
-           	</archive>
-       	</configuration>
-	</plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.1.0</version>
+        <configuration>
+          <archive>
+            <manifest>
+              <mainClass>com.app.App</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
+
+  <!-- Add distributionManagement for deployment -->
+  <distributionManagement>
+    <repository>
+      <id>my-repository</id>
+      <name>Release Repository</name>
+      <url>https://your-repository-url/releases</url>
+    </repository>
+    <snapshotRepository>
+      <id>my-snapshot-repository</id>
+      <name>Snapshot Repository</name>
+      <url>https://your-repository-url/snapshots</url>
+    </snapshotRepository>
+  </distributionManagement>
 </project>
